@@ -40,5 +40,11 @@ public:
 };
 
 int main() {
-
+    Fraction obj;
+    obj.Init(5, 10);
+    obj.Print();
+    Fraction obj2;
+    obj2.Init(3, 6);
+    obj.Sum(obj2);
+    obj.Print();
 }
