@@ -29,22 +29,37 @@ public:
         numerator = 1;
         denominator = 1;
     }
-    void Sum(Fraction& fr) {
-        numerator = numerator * fr.denominator + fr.numerator * denominator;
-        denominator = denominator * fr.denominator;
+    Fraction& Sum(Fraction& fr) {
+        Fraction rez;
+        rez.numerator = this->numerator * fr.denominator + fr.numerator * denominator;
+        rez.denominator = this->denominator * fr.denominator;
+        return rez;
     }
-    void Subraction(Fraction& fr) {
-        numerator = numerator * fr.denominator - fr.numerator * denominator;
-        denominator = denominator * fr.denominator;
+    Fraction& Subraction(Fraction& fr) {
+        Fraction rez;
+        rez.numerator = this->numerator * fr.denominator - fr.numerator * denominator;
+        rez.denominator = this->denominator * fr.denominator;
+        return rez;
+    }
+    Fraction& Multiplay(Fraction& fr) {
+        Fraction rez;
+        rez.numerator = this->numerator * fr.denominator;
+        rez.denominator = this->denominator * fr.denominator;
+        return rez;
+    }
+    Fraction& Divite(Fraction& fr) {
+        Fraction rez;
+        rez.numerator = this->numerator * fr.denominator;
+        rez.denominator = this->denominator * fr.numerator;
+        return rez;
     }
 };
 
 int main() {
     Fraction obj;
     obj.Init(5, 10);
-    obj.Print();
     Fraction obj2;
-    obj2.Init(3, 6);
-    obj.Sum(obj2);
-    obj.Print();
+    obj2.Init(2, 5);
+    Fraction a = obj.Sum(obj2);
+    a.Print();
 }
