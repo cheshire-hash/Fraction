@@ -22,8 +22,9 @@ public:
         cout << "Numerator = " << numerator << "\t" << "Denominator = " << denominator << endl;
     }
     void Init(int n, int d) {
-        if (d > 0) denominator = d;
-        numerator = n;
+        if (d > 0) 
+            this->denominator = d;
+        this->numerator = n;
     }
     void Init() {
         numerator = 1;
